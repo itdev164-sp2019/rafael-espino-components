@@ -1,1 +1,1 @@
-export { BaseContainer } from '.BaseContainer'
+export * from './BaseContainer'
