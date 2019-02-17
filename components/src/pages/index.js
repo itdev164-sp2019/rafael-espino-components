@@ -4,7 +4,8 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import {Address, Button } from '../components/Element'
+import {IconButton, Button, Section } from '../components/Element'
+import { Search } from 'styled-icons/feather'
 
 
 const IndexPage = () => (
@@ -16,10 +17,11 @@ const IndexPage = () => (
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
-    <Address>
-      My addres is bla bla bla.
-      <Button variant="primary">Contact me</Button>
-    </Address>
+    <Section flex justifyContent="space-evenly" m={2}>
+      <Link to="/page-2/">Go to page 2</Link>
+      <Button variant="primary">My Custom Button!</Button>
+      <IconButton icon={<Search/>} />
+    </Section>
   </Layout>
 )
 

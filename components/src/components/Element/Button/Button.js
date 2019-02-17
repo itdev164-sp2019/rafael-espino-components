@@ -1,13 +1,10 @@
-import React from 'react'     // 8.5k (gzipped: 3.4k)
-import PropTypes from 'prop-types' //1.6k (gzipped: 838)
-import {ButtonBase} from './ButtonBase'    //15.3k (gzipped: 4.7k)
+import React from 'react'    
+import PropTypes from 'prop-types' 
+import {ButtonBase} from './ButtonBase'    
 import styled from 'styled-components'
 
 const StyledButton = styled(ButtonBase)`
-padding: 8px;
-color: ${props => (props.variant === 'primary' ? 'black' : 'white' )};
-border: solid 1px
-    ${props => (props.variant === 'primary' ? 'black' : 'white')};
+${props => props.theme.variants.button[props.variants || 'primary']};
 `
 
 export const Button = props => <StyledButton {...props} />
