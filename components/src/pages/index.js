@@ -17,7 +17,7 @@ const IndexPage = () => (
       <Image />
     </div>
     <Address>
-      My addres is bla bla bla.
+      My addres is.
       <Button variant="primary">Contact me</Button>
     </Address>
   </Layout>

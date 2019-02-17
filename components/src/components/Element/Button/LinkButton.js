@@ -4,8 +4,7 @@ import {ButtonBase} from './ButtonBase'    //15.3k (gzipped: 4.7k)
 import styled from 'styled-components'
 
 const StyledButton = styled(ButtonBase)`
-padding: 8px;
-color: ${propps => (props.variant === 'primary' ? 'blue' : 'white')};
+${props => props.theme.variants.LinkButton[props.variants || 'primary']};
 `
 
 export const LinkButton = props => <StyledButton {...props}/>
