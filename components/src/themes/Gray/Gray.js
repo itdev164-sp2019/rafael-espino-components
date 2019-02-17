@@ -59,6 +59,14 @@ const variants ={
             borderColor: theme.colors.primary.contrasText
         }
     },
+    iconButton: {
+        primary: {
+            color: theme.colors.primary.main
+        },
+        contrast: {
+            color: theme.colors.primary.contrasText
+        }
+    },
     linkButton:{
         primary:{
             color: theme.colors.primary.main
