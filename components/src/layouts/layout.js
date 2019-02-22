@@ -4,10 +4,10 @@ import { StaticQuery, graphql } from "gatsby"
 
 import { ThemeProvider} from 'styled-components'
 import {Gray as theme } from '../themes/Gray'
-import Header from "./header"
+
 import "./layout.css"
 import { Footer, Main } from '../components/Element'
-
+import { Masthead } from '../components/Masthead'
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
   <StaticQuery
@@ -22,7 +22,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Masthead siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
             margin: `0 auto`,
