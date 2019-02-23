@@ -6,28 +6,24 @@ import { Link } from 'rebass'
 
 const Outer = styled(Box)`
 height: ${props => props.height};
-with: 100%;
-backgroung-color: rebeccapurple;
-margin-botto: 1.45rem;
+width: 100%;
+background-color: rebeccapurple;
+margin-bottom: 1.45rem;
+`
+const styledLink = styled(Link)`
+color: white;
+text-decoration: none;
 `
 
 export const Masthead = ({ height, siteTitle}) => {
     return ( 
         <Outer height={height}>
-        <Link
-        href="/"
-        style={{
-            color: `white`,
-            textDecoration: `none`
-        }}
-        >
-        {siteTitle}
-        </Link>
+        <styledLink href="/">{siteTitle}</styledLink>
         </Outer>
     )
 }
 
-Masthead.prototype = {
+Masthead.prototypes = {
     height: PropTypes.string.isRequired,
     siteTitle: PropTypes.string
 }
