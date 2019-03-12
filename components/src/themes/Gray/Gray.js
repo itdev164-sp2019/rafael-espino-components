@@ -1,6 +1,7 @@
 import React from 'react'
 import mastheadImage from "./images/styled-components.png"
-import { menu, search, Search} from 'styled-icons/feather'
+import { Menu, Search} from 'styled-icons/feather'
+import  { darken } from 'polished'
 
 const images = {
     mastheadImage
@@ -22,7 +23,7 @@ const theme = {
         normal: 'normal',
         tracked: '0.1em',
         tight: '-0.05em',
-        mega: '0.25em'
+        mega: '0.25em',
     },
     borders: [
         0,
@@ -39,7 +40,7 @@ colors: {
         light: 'hsl(208, 13%, 35%)',
         main: 'hsl(208, 13%, 25%)',
         dark: 'hsl(208, 13%, 15%)',
-        contrasText: '#ffffff'
+        contrasText: '#ffffff',
     },
     Text: {
         primary: 'hsl(208, 13%, 15%)',
@@ -56,8 +57,18 @@ const defaults = {
         border: theme.borders[3],
         textTransform: 'uppercase',
         letterSpacing: theme.letterSpacing.tracked
+    },
+    masthead: {
+        height: '100%',
+        width: '100%',
+        background: theme.colors.primary.main,
+        borderBottom: theme.borders[1],
+        borderColor: darken(0.1, theme.colors.primary.main)
+    },
+    text: {
+        lineHeight: theme.lineHeight.copy
     }
-}
+};
 
 const variants ={
     button: {
@@ -93,9 +104,9 @@ const variants ={
 
 
 
-const Gray = {
-    ...theme, defaults, variants
-}
+// const Gray = {
+//     ...theme, defaults, variants
+// }
 
-const Gray = {...theme, defaults, variants, images, icons};
-export {Gray};
+const Gray = {...theme, defaults, variants, images, icons };
+export { Gray };
