@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import { ThemeConsumer } from 'styled-components'
 import { IconButton } from '../Element'
 
-export const SearchButton = props => (
+export const MenuButton = props => (
     <ThemeConsumer>
-        {theme => <IconButton icon={theme.icons.Search}{...props}/>}
+        {theme => <IconButton icon={theme.icons.Menu}{...props}/>}
     </ThemeConsumer>
 )
 
-SearchButton.PropTypes = {
+MenuButton.propTypes = {
     variant: PropTypes.string
 }
