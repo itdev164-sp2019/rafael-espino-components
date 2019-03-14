@@ -1,22 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Box } from 'rebass';
-import styled from 'styled-components';
+import React from 'react'
+import PropTypes from 'prop-types'
+import {Box} from 'rebass'
+import styled from 'styled-components'
 
-const Outer = styled(Box)`
+
+const Outer = styled (Box)`
 height: ${props => props.height};
 width: 100%;
 position: fixed;
-top: 0px;
+top:0px;
 z-index: 9999;
-`;
+`
+export const Masthead =({height,children}) =>{
+    return <Outer height = {height}>{children}</Outer>
+}
 
-
-export const Masthead = ({ height, children}) => {
-    return <Outer height={height}>{children}</Outer>;
-};
-
-Masthead.PropTypes = {
+Masthead.propTypes = {
     height: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired
-};
+}
