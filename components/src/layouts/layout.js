@@ -1,13 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
-
-import { ThemeProvider} from 'styled-components'
-import {Gray as theme } from '../themes/Gray'
-
 import "./layout.css"
-import { Footer, Main } from '../components/Element'
-import { Masthead } from '../components/Masthead'
+import { ThemeProvider, ThemeConsumer } from 'styled-components'
+import {Gray as theme } from '../themes/Gray'
+import { Footer, Main} from '../components/Element'
+import {Masthead, DefaultLayout} from '../components/Masthead'
+
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
   <StaticQuery
@@ -22,7 +21,11 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <div>
-        <Masthead siteTitle={data.site.siteMetadata.title} />
+        <Masthead height="85px">
+        <ThemeConsumer>
+          {theme => <DefaultLayout image={theme.images.mastheadImage} />}
+        </ThemeConsumer>
+        </Masthead>
         <div
           style={{
             margin: `0 auto`,
@@ -31,7 +34,7 @@ const Layout = ({ children }) => (
             paddingTop: 0,
           }}
         >
-          <Main>{children}</Main>
+          <Main mt={85}>{children}</Main>
           <Footer>
             © {new Date().getFullYear()}, Built with
             {` `}
