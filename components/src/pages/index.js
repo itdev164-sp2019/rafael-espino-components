@@ -1,12 +1,11 @@
-import React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../layouts/layout"
+import React from 'react'
+import { Link } from 'gatsby'
+import {ShareButtonList} from '../components/SocialShareButton'
+import Layout from '../layouts/layout'
 import Image from "../gatsby-components/image"
 import SEO from "../gatsby-components/seo"
-import {IconButton, Button, Section } from '../components/Element'
+import { Button, IconButton, Section } from '../components/Element'
 import { Search } from 'styled-icons/feather'
-
 
 const IndexPage = () => (
   <Layout>
@@ -14,13 +13,20 @@ const IndexPage = () => (
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
+    <ShareButtonList
+          addThisPubId="ra-5cb7a9ab4352f644"
+          googleAnalyticsId=""
+          contentTitle="Fake title"
+          contentImage="http://placekitten.com/g/300/700"
+          contentDescription="Here is an article about science things, and maybe kittens."
+          />
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
     <Section flex justifyContent="space-evenly" m={2}>
       <Link to="/page-2/">Go to page 2</Link>
       <Button variant="primary">My Custom Button!</Button>
-      <IconButton icon={<Search/>} />
+      <IconButton icon={<Search />} />
     </Section>
   </Layout>
 )
